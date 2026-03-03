@@ -1,6 +1,8 @@
 package com.solveria.core.shared.base;
 
 import jakarta.persistence.*;
+import java.io.Serializable;
+import java.time.LocalDateTime;
 import org.hibernate.annotations.Filter;
 import org.hibernate.annotations.FilterDef;
 import org.hibernate.annotations.ParamDef;
@@ -9,19 +11,8 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 
-import java.io.Serializable;
-import java.time.LocalDateTime;
-
-@FilterDef(
-        name = "tenantFilter",
-        parameters = @ParamDef(name = "tenantId", type = String.class)
-)
-@Filter(
-        name = "tenantFilter",
-        condition = "tenant_id = :tenantId"
-)
-
-
+@FilterDef(name = "tenantFilter", parameters = @ParamDef(name = "tenantId", type = String.class))
+@Filter(name = "tenantFilter", condition = "tenant_id = :tenantId")
 @MappedSuperclass
 public abstract class BaseEntity implements Serializable {
 
@@ -29,8 +20,7 @@ public abstract class BaseEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Version
-    private Long version;
+    @Version private Long version;
 
     @Column(name = "tenant_id", nullable = false, updatable = false)
     private String tenantId;

@@ -5,12 +5,10 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.validation.constraints.NotNull;
-import org.springframework.lang.NonNull;
-import org.springframework.web.filter.OncePerRequestFilter;
-
 import java.io.IOException;
 import java.util.UUID;
+import org.springframework.lang.NonNull;
+import org.springframework.web.filter.OncePerRequestFilter;
 
 public class CorrelationIdFilter extends OncePerRequestFilter {
 
@@ -18,8 +16,8 @@ public class CorrelationIdFilter extends OncePerRequestFilter {
     protected void doFilterInternal(
             @NonNull HttpServletRequest request,
             @NonNull HttpServletResponse response,
-            @NonNull FilterChain filterChain
-    ) throws ServletException, IOException {
+            @NonNull FilterChain filterChain)
+            throws ServletException, IOException {
 
         try {
             String correlationId = request.getHeader("X-Correlation-Id");

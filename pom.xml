@@ -11,7 +11,6 @@
 
     <modules>
         <module>core-platform</module>
-        <module>iam-service</module>
     </modules>
 
     <properties>
@@ -84,6 +83,10 @@
                                     <requireJavaVersion>
                                         <version>[21,)</version>
                                     </requireJavaVersion>
+                                    <requireMavenVersion>
+                                        <version>[3.8.1,)</version>
+                                        <message>Maven 3.8.1 or higher is required.</message>
+                                    </requireMavenVersion>
                                 </rules>
                             </configuration>
                         </execution>
@@ -96,8 +99,41 @@
                     <version>${spring.boot.version}</version>
                 </plugin>
 
+                <plugin>
+                    <groupId>com.diffplug.spotless</groupId>
+                    <artifactId>spotless-maven-plugin</artifactId>
+                    <version>2.43.0</version>
+                    <configuration>
+                        <java>
+                            <googleJavaFormat>
+                                <version>1.17.0</version>
+                                <style>AOSP</style>
+                            </googleJavaFormat>
+                            <removeUnusedImports/>
+                            <trimTrailingWhitespace/>
+                            <endWithNewline/>
+                        </java>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>spotless-check</id>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
             </plugins>
         </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
     </build>
 
 </project>

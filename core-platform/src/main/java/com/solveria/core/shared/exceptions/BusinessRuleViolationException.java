@@ -8,7 +8,6 @@ public class BusinessRuleViolationException extends DomainException {
         super(
                 "error.business.rule.violation",
                 Map.of("rule", ruleKey),
-                "Business rule violated: " + ruleKey
-        );
+                "Business rule violated: " + ruleKey);
     }
 }

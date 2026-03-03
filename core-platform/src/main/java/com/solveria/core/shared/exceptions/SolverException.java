@@ -12,11 +12,7 @@ public abstract class SolverException extends RuntimeException {
         this(code, Collections.emptyMap(), null);
     }
 
-    protected SolverException(
-            String code,
-            Map<String, Object> args,
-            String technicalMessage
-    ) {
+    protected SolverException(String code, Map<String, Object> args, String technicalMessage) {
         super(technicalMessage); // SOLO para logs / developers
         this.code = code;
         this.args = args;

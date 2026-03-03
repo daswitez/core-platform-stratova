@@ -1,59 +1,116 @@
 package com.solveria.core.iam.domain.model;
 
-import com.solveria.core.shared.base.BaseEntity;
-import jakarta.persistence.*;
-
-import java.util.Collection;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
-@Table(name = "iam_role")
-public class Role extends BaseEntity {
+/**
+ * Pure domain model for Role - no persistence framework dependencies.
+ *
+ * <p>Represents a role with associated permissions.
+ */
+public class Role {
 
-    @Column(nullable = false)
+    private final Long id;
     private String name;
-
-    @Column
     private String description;
-
-    @ManyToMany(mappedBy = "roles")
-    private Set<User> users = new HashSet<>();
-
-    @OneToMany(mappedBy = "role")
-    private Set<Permission> permissions = new HashSet<>();
+    private Set<Long> permissionIds = new HashSet<>();
+    private String tenantId;
+    private Long version;
+    private LocalDateTime createdAt;
+    private String createdBy;
+    private LocalDateTime lastModifiedAt;
+    private String lastModifiedBy;
 
     protected Role() {
-        // Constructor requerido por JPA
+        this.id = null;
     }
 
     public Role(String name, String description) {
+        this.id = null;
         this.name = name;
         this.description = description;
+    }
+
+    public Role(
+            Long id,
+            String name,
+            String description,
+            Set<Long> permissionIds,
+            String tenantId,
+            Long version,
+            LocalDateTime createdAt,
+            String createdBy,
+            LocalDateTime lastModifiedAt,
+            String lastModifiedBy) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.permissionIds = permissionIds != null ? new HashSet<>(permissionIds) : new HashSet<>();
+        this.tenantId = tenantId;
+        this.version = version;
+        this.createdAt = createdAt;
+        this.createdBy = createdBy;
+        this.lastModifiedAt = lastModifiedAt;
+        this.lastModifiedBy = lastModifiedBy;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getDescription() {
         return description;
     }
 
-    public Set<Permission> getPermissions() {
-        return permissions;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void assignPermissions(Collection<Permission> newPermissions) {
-        if (newPermissions == null || newPermissions.isEmpty()) {
-            return;
-        }
+    public Set<Long> getPermissionIds() {
+        return new HashSet<>(permissionIds);
+    }
 
-        for (Permission permission : newPermissions) {
-            if (permission != null && !this.permissions.contains(permission)) {
-                permission.changeRole(this);
-                this.permissions.add(permission);
-            }
+    public void assignPermissionIds(Set<Long> permissionIds) {
+        this.permissionIds.clear();
+        if (permissionIds != null) {
+            this.permissionIds.addAll(permissionIds);
         }
+    }
+
+    public String getTenantId() {
+        return tenantId;
+    }
+
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
+
+    public Long getVersion() {
+        return version;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public LocalDateTime getLastModifiedAt() {
+        return lastModifiedAt;
+    }
+
+    public String getLastModifiedBy() {
+        return lastModifiedBy;
     }
 }

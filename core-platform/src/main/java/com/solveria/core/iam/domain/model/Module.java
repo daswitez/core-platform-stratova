@@ -1,17 +1,100 @@
 package com.solveria.core.iam.domain.model;
 
-import com.solveria.core.shared.base.BaseEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "iam_module")
-public class Module extends BaseEntity {
+/**
+ * Pure domain model for Module - no persistence framework dependencies.
+ *
+ * <p>Represents a module in the system (e.g., "User Management", "Reporting").
+ */
+public class Module {
 
-    @Column(nullable = false)
+    private final Long id;
     private String code;
-
-    @Column(nullable = false)
     private String name;
+    private String tenantId;
+    private Long version;
+    private LocalDateTime createdAt;
+    private String createdBy;
+    private LocalDateTime lastModifiedAt;
+    private String lastModifiedBy;
+
+    protected Module() {
+        this.id = null;
+    }
+
+    public Module(String code, String name) {
+        this.id = null;
+        this.code = code;
+        this.name = name;
+    }
+
+    public Module(
+            Long id,
+            String code,
+            String name,
+            String tenantId,
+            Long version,
+            LocalDateTime createdAt,
+            String createdBy,
+            LocalDateTime lastModifiedAt,
+            String lastModifiedBy) {
+        this.id = id;
+        this.code = code;
+        this.name = name;
+        this.tenantId = tenantId;
+        this.version = version;
+        this.createdAt = createdAt;
+        this.createdBy = createdBy;
+        this.lastModifiedAt = lastModifiedAt;
+        this.lastModifiedBy = lastModifiedBy;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getTenantId() {
+        return tenantId;
+    }
+
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
+
+    public Long getVersion() {
+        return version;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public LocalDateTime getLastModifiedAt() {
+        return lastModifiedAt;
+    }
+
+    public String getLastModifiedBy() {
+        return lastModifiedBy;
+    }
 }

@@ -8,9 +8,7 @@ import com.solveria.core.security.context.SecurityUserContext;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
-/**
- * Listener de auditoría funcional.
- */
+/** Listener de auditoría funcional. */
 @Component
 public class AuditEventListener {
 
@@ -23,14 +21,14 @@ public class AuditEventListener {
     @EventListener
     public void onAuditEvent(AuditEvent event) {
 
-        AuditLog log = new AuditLog(
-                event.action(),
-                event.entity(),
-                event.entityId(),
-                SecurityUserContext.getUserIdentifier(),
-                SecurityTenantContext.getTenantId(),
-                event.occurredAt()
-        );
+        AuditLog log =
+                new AuditLog(
+                        event.action(),
+                        event.entity(),
+                        event.entityId(),
+                        SecurityUserContext.getUserIdentifier(),
+                        SecurityTenantContext.getTenantId(),
+                        event.occurredAt());
 
         repository.save(log);
     }

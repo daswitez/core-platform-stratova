@@ -8,7 +8,6 @@ public class PermissionDeniedException extends ApplicationException {
         super(
                 "error.permission.denied",
                 Map.of("action", action),
-                "Permission denied for action: " + action
-        );
+                "Permission denied for action: " + action);
     }
 }

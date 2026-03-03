@@ -17,17 +17,14 @@ public class AuditLog {
 
     private String entityId;
 
-    /**
-     * Actor semántico (NO Long)
-     */
+    /** Actor semántico (NO Long) */
     private String userId;
 
     private String tenantId;
 
     private Instant occurredAt;
 
-    protected AuditLog() {
-    }
+    protected AuditLog() {}
 
     public AuditLog(
             String action,
@@ -35,8 +32,7 @@ public class AuditLog {
             String entityId,
             String userId,
             String tenantId,
-            Instant occurredAt
-    ) {
+            Instant occurredAt) {
         this.action = action;
         this.entity = entity;
         this.entityId = entityId;

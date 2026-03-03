@@ -9,9 +9,7 @@ public class EntityNotFoundException extends ApplicationException {
                 "error.entity.not_found",
                 Map.of(
                         "entity", entity,
-                        "id", identifier
-                ),
-                "Entity not found: " + entity + " with id " + identifier
-        );
+                        "id", identifier),
+                "Entity not found: " + entity + " with id " + identifier);
     }
 }

@@ -12,8 +12,6 @@ public class UseCaseMetricsService {
     }
 
     public void observe(String useCaseName, Runnable action) {
-        Observation.createNotStarted(useCaseName, registry)
-                .observe(action);
+        Observation.createNotStarted(useCaseName, registry).observe(action);
     }
 }
-

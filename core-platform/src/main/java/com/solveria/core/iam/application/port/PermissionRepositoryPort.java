@@ -1,7 +1,6 @@
 package com.solveria.core.iam.application.port;
 
 import com.solveria.core.iam.domain.model.Permission;
-
 import java.util.Set;
 
 public interface PermissionRepositoryPort {

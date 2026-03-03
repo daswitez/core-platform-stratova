@@ -2,25 +2,25 @@ package com.solveria.core.iam.infrastructure.persistence.adapter;
 
 import com.solveria.core.iam.application.port.ActionRepositoryPort;
 import com.solveria.core.iam.domain.model.Action;
+import com.solveria.core.iam.infrastructure.persistence.mapper.ActionJpaMapper;
 import com.solveria.core.iam.infrastructure.persistence.repository.ActionJpaRepository;
-import org.springframework.stereotype.Component;
-
 import java.util.Optional;
-import java.util.Set;
+import org.springframework.stereotype.Component;
 
 @Component
 public class ActionRepositoryAdapter implements ActionRepositoryPort {
 
     private final ActionJpaRepository actionJpaRepository;
+    private final ActionJpaMapper mapper;
 
-    public ActionRepositoryAdapter(ActionJpaRepository actionJpaRepository) {
+    public ActionRepositoryAdapter(
+            ActionJpaRepository actionJpaRepository, ActionJpaMapper mapper) {
         this.actionJpaRepository = actionJpaRepository;
+        this.mapper = mapper;
     }
 
     @Override
     public Optional<Action> findById(Long id) {
-        return actionJpaRepository.findById(id);
+        return actionJpaRepository.findById(id).map(mapper::toDomain);
     }
-
-
 }
