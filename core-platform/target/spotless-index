@@ -44,7 +44,7 @@ src/main/java/com/solveria/core/iam/infrastructure/persistence/entity/ModuleJpaE
 src/main/java/com/solveria/core/iam/infrastructure/persistence/entity/PermissionJpaEntity.java 2026-03-03T19:50:52.114799743Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/entity/ResourceJpaEntity.java 2026-03-03T19:50:52.183455854Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/entity/RoleJpaEntity.java 2026-03-03T19:50:52.163083185Z
-src/main/java/com/solveria/core/iam/infrastructure/persistence/entity/RoleJpaEntityExample.java 2026-03-03T19:50:52.216455309Z
+src/main/java/com/solveria/core/iam/infrastructure/persistence/entity/RoleJpaEntityExample.java 2026-03-06T01:14:10.215999981Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/entity/UserJpaEntity.java 2026-03-03T19:50:52.083457504Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/entity/package-info.java 2026-03-03T19:50:52.244454847Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/mapper/ActionJpaMapper.java 2026-03-03T19:50:51.784462438Z
