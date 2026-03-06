@@ -14,6 +14,8 @@ public class User {
     private final Long id;
     private String username;
     private String email;
+    private String password;
+    private String userCategory;
     private boolean active;
     private Set<Long> roleIds = new HashSet<>();
     private String tenantId;
@@ -27,10 +29,13 @@ public class User {
         this.id = null;
     }
 
-    public User(String username, String email, boolean active) {
+    public User(
+            String username, String email, String password, String userCategory, boolean active) {
         this.id = null;
         this.username = username;
         this.email = email;
+        this.password = password;
+        this.userCategory = userCategory;
         this.active = active;
     }
 
@@ -38,6 +43,8 @@ public class User {
             Long id,
             String username,
             String email,
+            String password,
+            String userCategory,
             boolean active,
             Set<Long> roleIds,
             String tenantId,
@@ -49,6 +56,8 @@ public class User {
         this.id = id;
         this.username = username;
         this.email = email;
+        this.password = password;
+        this.userCategory = userCategory;
         this.active = active;
         this.roleIds = roleIds != null ? new HashSet<>(roleIds) : new HashSet<>();
         this.tenantId = tenantId;
@@ -84,6 +93,22 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUserCategory() {
+        return userCategory;
+    }
+
+    public void setUserCategory(String userCategory) {
+        this.userCategory = userCategory;
     }
 
     public boolean isActive() {

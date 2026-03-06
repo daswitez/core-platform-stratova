@@ -15,7 +15,7 @@ src/main/java/com/solveria/core/iam/application/port/ModuleRepositoryPort.java 2
 src/main/java/com/solveria/core/iam/application/port/PermissionRepositoryPort.java 2026-03-03T19:50:51.338457247Z
 src/main/java/com/solveria/core/iam/application/port/ResourceRepositoryPort.java 2026-03-03T19:50:51.352517953Z
 src/main/java/com/solveria/core/iam/application/port/RoleRepositoryPort.java 2026-03-03T19:50:51.319960805Z
-src/main/java/com/solveria/core/iam/application/port/UserRepositoryPort.java 2026-03-03T19:50:51.366469337Z
+src/main/java/com/solveria/core/iam/application/port/UserRepositoryPort.java 2026-03-06T18:36:42.375448844Z
 src/main/java/com/solveria/core/iam/application/query/GetRoleByIdQuery.java 2026-03-03T19:50:51.128473265Z
 src/main/java/com/solveria/core/iam/application/usecase/AssignPermissionsToRoleUseCase.java 2026-03-03T19:50:51.192472209Z
 src/main/java/com/solveria/core/iam/application/usecase/AssignRolesToUserUseCase.java 2026-03-03T19:50:51.237471466Z
@@ -28,7 +28,7 @@ src/main/java/com/solveria/core/iam/domain/model/Module.java 2026-03-03T19:50:52
 src/main/java/com/solveria/core/iam/domain/model/Permission.java 2026-03-03T19:50:52.370452768Z
 src/main/java/com/solveria/core/iam/domain/model/Resource.java 2026-03-03T19:50:52.309453775Z
 src/main/java/com/solveria/core/iam/domain/model/Role.java 2026-03-03T19:50:52.408452141Z
-src/main/java/com/solveria/core/iam/domain/model/User.java 2026-03-03T19:50:52.351453082Z
+src/main/java/com/solveria/core/iam/domain/model/User.java 2026-03-06T18:31:08.071005375Z
 src/main/java/com/solveria/core/iam/domain/service/PermissionEvaluatorService.java 2026-03-03T19:50:52.420451943Z
 src/main/java/com/solveria/core/iam/domain/valueobject/PermissionDefinition.java 2026-03-03T19:50:52.266454484Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/adapter/ActionRepositoryAdapter.java 2026-03-03T19:50:51.954459633Z
@@ -37,7 +37,7 @@ src/main/java/com/solveria/core/iam/infrastructure/persistence/adapter/ModuleRep
 src/main/java/com/solveria/core/iam/infrastructure/persistence/adapter/PermissionRepositoryAdapter.java 2026-03-03T19:50:52.020458543Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/adapter/ResourceRepositoryAdapter.java 2026-03-03T19:50:51.969459385Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/adapter/RoleRepositoryAdapter.java 2026-03-03T19:50:52.046458115Z
-src/main/java/com/solveria/core/iam/infrastructure/persistence/adapter/UserRepositoryAdapter.java 2026-03-03T19:50:51.996458940Z
+src/main/java/com/solveria/core/iam/infrastructure/persistence/adapter/UserRepositoryAdapter.java 2026-03-06T18:36:59.080134490Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/entity/ActionJpaEntity.java 2026-03-03T19:50:52.230455079Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/entity/FieldJpaEntity.java 2026-03-03T19:50:52.134485626Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/entity/ModuleJpaEntity.java 2026-03-03T19:50:52.146456464Z
@@ -45,7 +45,7 @@ src/main/java/com/solveria/core/iam/infrastructure/persistence/entity/Permission
 src/main/java/com/solveria/core/iam/infrastructure/persistence/entity/ResourceJpaEntity.java 2026-03-03T19:50:52.183455854Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/entity/RoleJpaEntity.java 2026-03-03T19:50:52.163083185Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/entity/RoleJpaEntityExample.java 2026-03-06T01:14:10.215999981Z
-src/main/java/com/solveria/core/iam/infrastructure/persistence/entity/UserJpaEntity.java 2026-03-03T19:50:52.083457504Z
+src/main/java/com/solveria/core/iam/infrastructure/persistence/entity/UserJpaEntity.java 2026-03-06T18:28:57.653906623Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/entity/package-info.java 2026-03-03T19:50:52.244454847Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/mapper/ActionJpaMapper.java 2026-03-03T19:50:51.784462438Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/mapper/FieldJpaMapper.java 2026-03-03T19:50:51.754462934Z
@@ -54,14 +54,14 @@ src/main/java/com/solveria/core/iam/infrastructure/persistence/mapper/Permission
 src/main/java/com/solveria/core/iam/infrastructure/persistence/mapper/ResourceJpaMapper.java 2026-03-03T19:50:51.839461531Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/mapper/RoleJpaMapper.java 2026-03-03T19:50:51.914460293Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/mapper/RoleJpaMapperExample.java 2026-03-03T19:50:51.724463429Z
-src/main/java/com/solveria/core/iam/infrastructure/persistence/mapper/UserJpaMapper.java 2026-03-03T19:50:51.814461943Z
+src/main/java/com/solveria/core/iam/infrastructure/persistence/mapper/UserJpaMapper.java 2026-03-06T18:29:41.753930902Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/repository/ActionJpaRepository.java 2026-03-03T19:50:51.542466433Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/repository/FieldJpaRepository.java 2026-03-03T19:50:51.471467604Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/repository/ModuleJpaRepository.java 2026-03-03T19:50:51.487467340Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/repository/PermissionJpaRepository.java 2026-03-03T19:50:51.456467852Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/repository/ResourceJpaRepository.java 2026-03-03T19:50:51.439468133Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/repository/RoleJpaRepository.java 2026-03-03T19:50:51.514466895Z
-src/main/java/com/solveria/core/iam/infrastructure/persistence/repository/UserJpaRepository.java 2026-03-03T19:50:51.576465871Z
+src/main/java/com/solveria/core/iam/infrastructure/persistence/repository/UserJpaRepository.java 2026-03-06T18:39:13.930639518Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/specification/IamSpecifications.java 2026-03-03T19:50:52.257454633Z
 src/main/java/com/solveria/core/observability/context/CorrelationIdContext.java 2026-03-03T19:50:52.469451135Z
 src/main/java/com/solveria/core/observability/filter/CorrelationIdFilter.java 2026-03-03T19:50:52.483450904Z

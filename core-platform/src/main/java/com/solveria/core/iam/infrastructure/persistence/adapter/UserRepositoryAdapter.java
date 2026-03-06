@@ -33,6 +33,11 @@ public class UserRepositoryAdapter implements UserRepositoryPort {
     }
 
     @Override
+    public Optional<User> findByEmail(String email) {
+        return userJpaRepository.findByEmail(email).map(mapper::toDomain);
+    }
+
+    @Override
     public User save(User user) {
         // Load RoleJpaEntity entities from IDs
         Set<RoleJpaEntity> roles =

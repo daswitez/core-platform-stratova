@@ -21,6 +21,12 @@ public class UserJpaEntity extends BaseEntity {
     private String email;
 
     @Column(nullable = false)
+    private String password;
+
+    @Column(name = "user_category", nullable = false)
+    private String userCategory;
+
+    @Column(nullable = false)
     private boolean active;
 
     @ManyToMany
@@ -34,9 +40,12 @@ public class UserJpaEntity extends BaseEntity {
         // JPA required constructor
     }
 
-    public UserJpaEntity(String username, String email, boolean active) {
+    public UserJpaEntity(
+            String username, String email, String password, String userCategory, boolean active) {
         this.username = username;
         this.email = email;
+        this.password = password;
+        this.userCategory = userCategory;
         this.active = active;
     }
 
@@ -54,6 +63,22 @@ public class UserJpaEntity extends BaseEntity {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUserCategory() {
+        return userCategory;
+    }
+
+    public void setUserCategory(String userCategory) {
+        this.userCategory = userCategory;
     }
 
     public boolean isActive() {
