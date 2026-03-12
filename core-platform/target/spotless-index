@@ -60,8 +60,8 @@ src/main/java/com/solveria/core/iam/infrastructure/persistence/repository/FieldJ
 src/main/java/com/solveria/core/iam/infrastructure/persistence/repository/ModuleJpaRepository.java 2026-03-03T19:50:51.487467340Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/repository/PermissionJpaRepository.java 2026-03-03T19:50:51.456467852Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/repository/ResourceJpaRepository.java 2026-03-03T19:50:51.439468133Z
-src/main/java/com/solveria/core/iam/infrastructure/persistence/repository/RoleJpaRepository.java 2026-03-03T19:50:51.514466895Z
-src/main/java/com/solveria/core/iam/infrastructure/persistence/repository/UserJpaRepository.java 2026-03-06T18:39:13.930639518Z
+src/main/java/com/solveria/core/iam/infrastructure/persistence/repository/RoleJpaRepository.java 2026-03-12T22:24:05.899868696Z
+src/main/java/com/solveria/core/iam/infrastructure/persistence/repository/UserJpaRepository.java 2026-03-12T22:58:48.134380082Z
 src/main/java/com/solveria/core/iam/infrastructure/persistence/specification/IamSpecifications.java 2026-03-03T19:50:52.257454633Z
 src/main/java/com/solveria/core/observability/context/CorrelationIdContext.java 2026-03-03T19:50:52.469451135Z
 src/main/java/com/solveria/core/observability/filter/CorrelationIdFilter.java 2026-03-03T19:50:52.483450904Z
